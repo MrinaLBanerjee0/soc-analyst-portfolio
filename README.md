@@ -38,7 +38,7 @@ A hands-on SOC investigation lab focused on using Splunk for security monitoring
 
 | Skill                                   | Associated Project     |
 | --------------------------------------- | ---------------------- |
-| SIEM Implementation & Log Analysis      | [Azure ELK Security Lab](azure-elk-security-lab/) |
+| SIEM Implementation & Log Analysis      | [Azure ELK Security Lab](MrinaLBanerjee0/azure-elk-security-lab) |
 | Network Configuration & Troubleshooting | Azure ELK Security Lab |
 | Security Event Investigation            | Azure ELK Security Lab |
 | Threat Detection                        | Azure ELK Security Lab |
