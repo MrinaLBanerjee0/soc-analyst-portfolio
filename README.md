@@ -35,15 +35,36 @@ A hands-on security lab built using Azure Virtual Machines and the ELK Stack.
 A hands-on SOC investigation lab focused on using Splunk for security monitoring, detection, alert investigation, and incident analysis.
 
 ## Skills
-
-| Skill                                   | Associated Project     |
-| --------------------------------------- | ---------------------- |
-| SIEM Implementation & Log Analysis      | [Azure ELK Security Lab](MrinaLBanerjee0/azure-elk-security-lab) |
-| Network Configuration & Troubleshooting | Azure ELK Security Lab |
-| Security Event Investigation            | Azure ELK Security Lab |
-| Threat Detection                        | Azure ELK Security Lab |
-| Security Alerts & Dashboards            | Azure ELK Security Lab |
-| Incident Documentation & Ticketing      | Azure ELK Security Lab |
+<table>
+    <tr>
+        <th>Skill</th>
+        <th>Associated Project</th>
+    </tr>
+    <tr>
+        <td>SIEM Implementation & Log Analysis</td>
+        <td><a href="https://github.com/MrinaLBanerjee0/azure-elk-security-lab" target="_blank">Azure ELK Security Lab</a></td>
+    </tr>
+    <tr>
+        <td>Network Configuration & Troubleshooting</td>
+        <td><a href="https://github.com/MrinaLBanerjee0/azure-elk-security-lab" target="_blank">Azure ELK Security Lab</a></td>
+    </tr>
+    <tr>
+        <td>Security Event Investigation</td>
+        <td><a href="https://github.com/MrinaLBanerjee0/azure-elk-security-lab" target="_blank">Azure ELK Security Lab</a></td>
+    </tr>
+    <tr>
+        <td>Threat Detection</td>
+        <td><a href="https://github.com/MrinaLBanerjee0/azure-elk-security-lab" target="_blank">Azure ELK Security Lab</a></td>
+    </tr>
+    <tr>
+        <td>Security Alerts & Dashboards</td>
+        <td><a href="https://github.com/MrinaLBanerjee0/azure-elk-security-lab" target="_blank">Azure ELK Security Lab</a></td>
+    </tr>
+    <tr>
+        <td>Incident Documentation & Ticketing</td>
+        <td><a href="https://github.com/MrinaLBanerjee0/azure-elk-security-lab" target="_blank">Azure ELK Security Lab</a></td>
+    </tr>
+</table>
 
 ## Tools
 
