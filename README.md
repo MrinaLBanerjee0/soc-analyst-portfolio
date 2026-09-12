@@ -90,11 +90,7 @@ A hands-on SOC investigation lab focused on using Splunk for security monitoring
     <img src="https://img.shields.io/badge/-Elastic_Fleet-005571?&style=for-the-badge&logo=elastic&logoColor=white" />
 </div>
 
-### Attack Simulation
 
-<div>
-    <img src="https://img.shields.io/badge/-Mythic-222222?&style=for-the-badge&logoColor=white" />
-</div>
 
 ### Case Management & Ticketing
 
