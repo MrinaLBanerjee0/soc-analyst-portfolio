@@ -4,16 +4,16 @@
 
 ## About Me
 
-I'm an aspiring SOC Analyst building hands-on experience through evidence-backed security labs. My focus is security monitoring, Windows and Active Directory telemetry, SIEM investigation, threat hunting, detection validation, and incident analysis.
+I'm working toward a SOC Analyst role and most of my learning comes from building labs, breaking things, fixing them, and then investigating the logs to understand what actually happened.
 
-I learn by building environments, generating controlled security activity, investigating the resulting telemetry, documenting what the evidence proves, and being explicit about limitations.
+So far I've spent the most time with Elastic, Splunk, Windows, Active Directory, Sysmon, PowerShell logging, Kerberos, and basic incident investigation. I try to keep my project notes tied to what I actually observed instead of making a lab look more impressive than it was.
 
-## Recruiter Snapshot
+## What I've worked with
 
 - **SIEM:** Elastic Security / ELK, Splunk Enterprise
-- **Windows & Identity:** Active Directory, Windows Security Events, Kerberos, PowerShell Script Block Logging, Sysmon
-- **Investigation:** alert triage, event correlation, process-tree analysis, IOC/hash enrichment, threat hunting
-- **Detection:** custom detection validation, false-positive analysis, rule tuning and retesting
+- **Windows & identity:** Active Directory, Windows Security Events, Kerberos, PowerShell Script Block Logging, Sysmon
+- **Investigation:** alert triage, event correlation, process-tree analysis, hash enrichment, threat hunting
+- **Detection:** validation, false-positive review, tuning, and retesting
 - **Infrastructure:** Microsoft Azure, Windows Server, Windows 11, Ubuntu/Linux, VirtualBox
 - **Case workflow:** basic Elastic-to-osTicket ticket automation
 
@@ -21,51 +21,55 @@ I learn by building environments, generating controlled security activity, inves
 
 ### 1. [Azure ELK Security Lab](https://github.com/MrinaLBanerjee0/azure-elk-security-lab)
 
-An evidence-backed SOC lab built in Microsoft Azure using Elastic Security.
+This was my first larger SOC lab. I built it in Azure and used Elastic Security to collect and investigate Windows and Linux telemetry.
 
-- Built a multi-VM Azure lab and centralized Windows and Linux telemetry in Elastic
-- Used Elastic Agent / Fleet, Sysmon, Microsoft Defender telemetry, Windows Security logs, and Linux SSH/system logs
-- Validated custom SSH and Windows failed-logon detections with controlled activity
-- Investigated alerts through raw-event, source, user, and host pivots
-- Created Kibana monitoring visualizations and basic Elastic-to-osTicket ticket automation
-- Documented architecture, evidence boundaries, investigation findings, exported artifacts, and limitations
-- Configured Mythic HTTP profile and an Apollo payload, but **did not prove an active Mythic callback**
+What I worked on:
 
-**Evidence:** [Project README](https://github.com/MrinaLBanerjee0/azure-elk-security-lab) · [Investigation Report](https://github.com/MrinaLBanerjee0/azure-elk-security-lab/blob/main/SOC-INVESTIGATION-REPORT.md) · [Evidence Index](https://github.com/MrinaLBanerjee0/azure-elk-security-lab/tree/main/evidence)
+- built a multi-VM Azure lab and centralized Windows and Linux logs in Elastic
+- used Elastic Agent / Fleet, Sysmon, Microsoft Defender telemetry, Windows Security logs, and Linux SSH/system logs
+- tested custom SSH and Windows failed-logon detections with controlled activity
+- investigated alerts by going back to the raw events and pivoting on source, user, and host
+- built Kibana monitoring visualizations and basic Elastic-to-osTicket ticket automation
+- documented the architecture, investigation, exported artifacts, and the gaps I found
+- configured a Mythic HTTP profile and Apollo payload, but **I did not prove an active Mythic callback**
+
+[Project README](https://github.com/MrinaLBanerjee0/azure-elk-security-lab) · [Investigation Report](https://github.com/MrinaLBanerjee0/azure-elk-security-lab/blob/main/SOC-INVESTIGATION-REPORT.md) · [Evidence](https://github.com/MrinaLBanerjee0/azure-elk-security-lab/tree/main/evidence)
 
 ---
 
 ### 2. [Enterprise Active Directory + Splunk SOC Lab](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab)
 
-A Windows domain and Splunk SOC lab focused on investigation, correlation, threat hunting, and detection tuning.
+For this project I wanted more Windows and identity investigation practice, so I built a small domain and sent the Windows telemetry into Splunk.
 
-- Built `corp.soclab.test` with Windows Server 2022 AD DS/DNS, two Windows 11 domain workstations, and a dedicated Splunk server
-- Forwarded Windows Security, Application/System, Sysmon, and PowerShell Operational telemetry to Splunk
-- Investigated a controlled Sep 10 activity sequence involving PowerShell `4104`, AD group changes `4728/4729`, workstation logons `4624`, and Kerberos `4768/4769`
-- Correlated workstation and domain-controller evidence instead of treating alerts as conclusions
-- Performed process-tree analysis and SHA-256 enrichment during a separate controlled validation
-- Tuned DET-001 and DET-003 from v1 to v2 after identifying a benign keyword false positive and noisy cross-host correlation logic
-- Kept DET-002 at v1 because the detection condition worked correctly and did not require tuning
-- Performed an independent threat hunt and documented what was and was not visible in the collected telemetry
-- Preserved an inline evidence gallery, incident report, tuning report, SPL files, and evidence limitations
+What I worked on:
 
-**Evidence:** [Project README](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab) · [Incident Investigation](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab/blob/main/investigations/sep10-incident-investigation.md) · [Detection Tuning Report](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab/blob/main/investigations/detection-tuning-report.md) · [Visual Evidence Gallery](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab/blob/main/evidence/README.md)
+- built `corp.soclab.test` with Windows Server 2022 AD DS/DNS, two Windows 11 domain workstations, and a dedicated Splunk server
+- forwarded Windows Security, Application/System, Sysmon, and PowerShell Operational logs to Splunk
+- investigated a controlled Sep 10 sequence involving PowerShell `4104`, AD group changes `4728/4729`, workstation logons `4624`, and Kerberos `4768/4769`
+- correlated workstation events with domain-controller activity instead of treating an alert as the final answer
+- practiced process-tree analysis and SHA-256 enrichment during a separate validation
+- tuned DET-001 and DET-003 from v1 to v2 after finding a benign keyword false positive and noisy cross-host logic
+- kept DET-002 at v1 because it was doing what I intended and I didn't find a real reason to create a v2
+- performed a separate threat hunt after the alert investigation
+- kept the screenshots, reports, SPL, and known limitations in the repository
 
-> **SPL learning boundary:** the Splunk searches in Project 2 were implemented, tested, debugged, tuned, and retested as part of guided learning. I do not present them as independently authored from scratch.
+[Project README](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab) · [Incident Investigation](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab/blob/main/investigations/sep10-incident-investigation.md) · [Detection Tuning Report](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab/blob/main/investigations/detection-tuning-report.md) · [Evidence Gallery](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab/blob/main/evidence/README.md)
 
-## Skills by Evidence
+> **SPL note:** I learned and built the Project 2 SPL with guidance. I implemented it in my own lab, tested it against my telemetry, debugged field issues, tuned the rules, and retested them. I don't claim that I wrote every search independently from scratch.
 
-| Skill | Evidence |
+## Skills I can show in the labs
+
+| Skill | Where I used it |
 |---|---|
-| SIEM monitoring & log analysis | [Azure ELK Security Lab](https://github.com/MrinaLBanerjee0/azure-elk-security-lab) · [AD + Splunk SOC Lab](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab) |
-| Alert investigation & event correlation | [Azure investigation](https://github.com/MrinaLBanerjee0/azure-elk-security-lab/blob/main/SOC-INVESTIGATION-REPORT.md) · [Splunk incident investigation](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab/blob/main/investigations/sep10-incident-investigation.md) |
-| Windows / Active Directory telemetry | [AD + Splunk SOC Lab](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab) |
-| Sysmon & PowerShell logging | [Azure ELK Security Lab](https://github.com/MrinaLBanerjee0/azure-elk-security-lab) · [AD + Splunk SOC Lab](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab) |
-| Kerberos analysis | [AD + Splunk incident investigation](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab/blob/main/investigations/sep10-incident-investigation.md) |
-| Detection validation & tuning | [Splunk detection tuning report](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab/blob/main/investigations/detection-tuning-report.md) |
-| Threat hunting | [AD + Splunk SOC Lab](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab) |
-| Azure networking & telemetry collection | [Azure ELK Security Lab](https://github.com/MrinaLBanerjee0/azure-elk-security-lab) |
-| Basic case-management automation | [Azure ELK Security Lab](https://github.com/MrinaLBanerjee0/azure-elk-security-lab) |
+| SIEM monitoring & log analysis | [Azure ELK Lab](https://github.com/MrinaLBanerjee0/azure-elk-security-lab) · [AD + Splunk Lab](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab) |
+| Alert investigation & event correlation | [Azure investigation](https://github.com/MrinaLBanerjee0/azure-elk-security-lab/blob/main/SOC-INVESTIGATION-REPORT.md) · [Splunk investigation](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab/blob/main/investigations/sep10-incident-investigation.md) |
+| Windows / Active Directory telemetry | [AD + Splunk Lab](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab) |
+| Sysmon & PowerShell logging | [Azure ELK Lab](https://github.com/MrinaLBanerjee0/azure-elk-security-lab) · [AD + Splunk Lab](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab) |
+| Kerberos analysis | [Splunk investigation](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab/blob/main/investigations/sep10-incident-investigation.md) |
+| Detection validation & tuning | [Detection tuning report](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab/blob/main/investigations/detection-tuning-report.md) |
+| Threat hunting | [AD + Splunk Lab](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab) |
+| Azure networking & telemetry collection | [Azure ELK Lab](https://github.com/MrinaLBanerjee0/azure-elk-security-lab) |
+| Basic ticket automation | [Azure ELK Lab](https://github.com/MrinaLBanerjee0/azure-elk-security-lab) |
 
 ## Tools & Technologies
 
@@ -82,4 +86,4 @@ A Windows domain and Splunk SOC lab focused on investigation, correlation, threa
 
 ## Current Goal
 
-I am seeking a SOC Trainee / Tier 1 SOC Analyst opportunity where I can apply my lab-based investigation experience, continue improving my SPL/KQL and networking skills, and grow through real security operations work.
+I'm looking for a SOC Trainee / Tier 1 SOC Analyst opportunity where I can use the investigation skills I've been building in my labs and keep improving my SPL, KQL, networking, and day-to-day SOC workflow.
