@@ -55,7 +55,7 @@ What I worked on:
 
 [Project README](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab) · [Incident Investigation](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab/blob/main/investigations/sep10-incident-investigation.md) · [Detection Tuning Report](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab/blob/main/investigations/detection-tuning-report.md) · [Evidence Gallery](https://github.com/MrinaLBanerjee0/enterprise-ad-splunk-soc-lab/blob/main/evidence/README.md)
 
-> **SPL note:** I learned and built the Project 2 SPL with guidance. I implemented it in my own lab, tested it against my telemetry, debugged field issues, tuned the rules, and retested them. I don't claim that I wrote every search independently from scratch.
+> **SPL note:** I learned and built the Project 2 SPL with guidance. I implemented it in my own lab, tested it against my telemetry, debugged field issues, tuned the rules, and retested them. 
 
 ## Skills I can show in the labs
 
